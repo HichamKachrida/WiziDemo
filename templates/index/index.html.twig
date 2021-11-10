@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WiziDemo{% endblock %}
+
+{% block body %}
+    <div id="preorder" class="row align-items-center">
+        <div class="col-lg-5 text-center">
+            <div class="w-100">
+                <h1 class="mb-2">CoffeeMug+</h1>
+                <h4>Collection été</h4>
+                <div class="mt-3 mb-5"><strong>490€</strong> <del>990€</del></div>
+                <p>
+                    <a target="_self" href="{{ path('boutique') }}" class="btn btn-outline-primary rounded-0">Pré-commander</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

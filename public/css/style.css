@@ -1,0 +1,55 @@
+html {
+    background: url(../img/background.jpg) no-repeat 80% center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+#topmenu {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#logo {
+    font-family: "Rubik",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.nav-link {
+    font-family: "Rubik",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: #000000!important;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#preorder {
+    margin-top: 15em;
+    padding-left: 20em;
+}
+
+#order {
+    margin-top: 5em;
+    padding-left: 20em;
+}
+
+#order-form {
+    width: 30%;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+
+#cart {
+    margin-top: 5em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

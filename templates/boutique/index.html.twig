@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WiziDemo{% endblock %}
+
+{% block body %}
+    <div id="order" class="row align-items-center">
+        <div class="col-lg-5 text-center">
+            <div class="w-100">
+                <h1 class="mb-2">CoffeeMug+</h1>
+                <h4>Collection été</h4>
+                <div class="price mt-3 mb-5"><strong>490€</strong> <del>990€</del></div>
+                {{ form_start(form, {'attr' : {'id' : 'order-form'}}) }}
+                    <div class="mb-5">
+                        <div class="input-group mb-3 center-block">
+                            {{ form_widget(form.prix) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">€</div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            {{ form_widget(form.quantite) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">Qte</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        <button id="addToCart" class="btn btn-outline-primary rounded-0">Ajouter au panier</button>
+                    </p>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="col-lg-7 align-self-end">
+            <img src="img/product.png" width="400" alt="CoffeeMug+">
+        </div>
+    </div>
+{% endblock %}

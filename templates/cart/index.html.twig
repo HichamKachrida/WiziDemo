@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WiziDemo{% endblock %}
+
+{% block body %}
+    <form id="cart-form" action="{{ path('update_cart') }}" method="post" target="_self">
+        <div id="cart" class="container bg-light">
+            <div class="row mb-5">
+                <form class="col-md-12" method="post">
+                    <div class="site-blocks-table">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="product-thumbnail">Image</th>
+                                <th class="product-name">Produit</th>
+                                <th class="product-price">Prix</th>
+                                <th class="product-quantity">Quantité</th>
+                                <th class="product-total">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for key, value in cart %}
+                            <tr>
+                                <td class="product-thumbnail text-center align-middle">
+                                    <img src="img/product.png" width="40" alt="CoffeeMug+">
+                                </td>
+                                <td class="product-name text-center align-middle">
+                                    <h2 class="h5 text-black">CoffeeMug+</h2>
+                                </td>
+                                <td class="text-center align-middle">
+                                    <div class="input-group mb-3" style="max-width: 120px;">
+                                        <input type="text" name="{{ key }}-prix" class="form-control text-center" value="{{ value.prix }}" >
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">€</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center align-middle">
+                                    <div class="input-group mb-3" style="max-width: 120px;">
+                                        <input type="text" name="{{ key }}-quantite" class="form-control text-center" value="{{ value.quantite }}" >
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">Qte</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center align-middle">{{ value.prix * value.quantite }}€</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row mb-5">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <button onclick = 'this.form.submit();' class="btn btn-primary btn-sm btn-block">Mettre à jour le panier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pl-5">
+                    <div class="row justify-content-end">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-12 text-right border-bottom mb-5">
+                                    <h3 class="text-black h4 text-uppercase">Total du panier</h3>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-md-6">
+                                    <span class="text-black">TVA</span>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <strong class="text-black">{{ tva }}€</strong>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="text-black">Total</span>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <strong class="text-black">{{ total }}€</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button onclick="alert('Felicitations, votre commande est déjà en cours de livraison!');" class="btn btn-primary btn-lg btn-block">Valider ma commande</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

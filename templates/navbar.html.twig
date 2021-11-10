@@ -1,0 +1,21 @@
+<nav id="topmenu" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" id="logo" target="_self" href="{{ path('index') }}">WiziDemo</a>
+        <ul class="navbar-nav text-right">
+            <li class="nav-item active">
+                <a class="nav-link" target="_self" href="{{ path('index') }}">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="{{ path('boutique') }}">Boutique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_self" href="{{ path('cart') }}">Mon panier</a>
+            </li>
+            <li class="nav-item">
+                <button onclick="window.location.href='{{ path('cart') }}';" id="shoppingcart" type="button" class="btn btn-primary">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i> <span id="nb-product" class="badge badge-light">{{ nbProduct }}</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
